@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <input #inputElementRef
           [value]="title"
-          (keyup.enter)="changeTitle($event.target.value)">
+          (keyup.enter)="changeTitle(inputElementRef)">
 
-    <button (click)="changeTitle(inputElementRef.value)">
+    <button (click)="changeTitle(inputElementRef)">
       Save
     </button>
   `,
@@ -21,7 +21,8 @@ export class InputButtonUnitComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeTitle(newTitle: string): void {
-    this.title = newTitle;
+  changeTitle(inputElementReference): void {
+    console.log(inputElementReference)
+    this.title = inputElementReference.value;
   }
 }

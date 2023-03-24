@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 
     <ul>
       <li *ngFor="let todoItem of todoList">
-        {{ todoItem.title }}
+        <app-todo-item [item]="todoItem"></app-todo-item>
       </li>
     </ul>
   `,

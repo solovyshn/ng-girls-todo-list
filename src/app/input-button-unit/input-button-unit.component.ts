@@ -6,10 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     <input class="todo-input"
           #inputElementRef
           [value]="title"
-          (keyup.enter)="submitValue($event.target.value)">
+          (keyup.enter)="submitValue($event)">
 
     <button class="btn"
-          (click)="submitValue(inputElementRef.value)">
+          (click)="submitValue(inputElementRef)">
       Save
     </button>
   `,
@@ -23,10 +23,8 @@ export class InputButtonUnitComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitValue(newTitle: string): void {
-    console.log(this.title)
-    this.submit.emit(newTitle)
-    console.log(this.title)
-
+  submitValue(inputReference): void {
+    this.submit.emit(inputReference.value)
+    inputReference.value  = ""
   }
 }

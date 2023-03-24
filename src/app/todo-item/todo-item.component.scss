@@ -15,8 +15,19 @@
 .todo-title {
   flex-grow: 1;
   padding-left: 11px;
+  cursor: pointer;
 }
 
 .todo-complete {
   text-decoration: line-through;
+}
+
+.steps {
+  visibility:hidden;
+  display: none;
+}
+
+.btnEditorr {
+  visibility:hidden;
+  display: none;
 }
